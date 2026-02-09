@@ -21,7 +21,7 @@ const homePageFeatureList:FeatureBox[] = [
 
 export default function Features(){
     return (
-        <div className="w-full flex justify-between items-center my-70">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center my-50 md:my-70">
             {homePageFeatureList.map((value, index)=><FeatureBox title={value.title} description={value.description} key={value.title} />)}
         </div>
     )
@@ -30,7 +30,7 @@ export default function Features(){
 
 function FeatureBox({title, description}: FeatureBox){
     return (
-        <div className="w-80 h-40 border border-slate-700 rounded-xl p-4 shadow-xl">
+        <div className="w-80 h-40 border border-slate-700 rounded-xl p-4 shadow-xl my-4">
                 <h2 className="text-xl font-semibold text-center mb-10">{title}</h2>
                 <p className="text-slate-600 text-center">{description}</p>
         </div>

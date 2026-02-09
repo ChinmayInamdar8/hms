@@ -11,11 +11,11 @@ export default function HeroSection() {
           fill
           priority
         />
-        <div className="w-150 flex flex-col justify-center items-center bg-black/40 p-6 rounded-lg">
-          <h1 className="text-4xl text-center text-white">
+        <div className="w-150 flex flex-col justify-center items-center bg-black/40 p-2 md:p-6 rounded-lg">
+          <h1 className="text-2xl md:text-4xl text-center text-white">
             Protect Your Health
           </h1>
-          <p className="mt-5 text-center text-white">
+          <p className=" hidden md:block mt-5 text-center text-white">
             Our medical clinic provides quality care for the entire family while maintaining a personable atmosphere best services.
           </p>
         </div>
