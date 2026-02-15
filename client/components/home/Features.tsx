@@ -21,7 +21,7 @@ const homePageFeatureList:FeatureBox[] = [
 
 export default function Features(){
     return (
-        <div className="w-full flex flex-col md:flex-row justify-between items-center my-50 md:my-70">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center my-20 md:my-70">
             {homePageFeatureList.map((value, index)=><FeatureBox title={value.title} description={value.description} key={value.title} />)}
         </div>
     )

@@ -7,7 +7,7 @@ export default function HeroSection() {
         <Image
           src={"/banner.jpg"}
           alt=""
-          className="object-cover -z-10"
+          className="hidden md:block md:object-cover -z-10"
           fill
           priority
         />
