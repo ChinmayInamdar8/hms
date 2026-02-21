@@ -1,10 +1,12 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function HomeHeader() {
   const [isHidden, setIsHidden] = useState(false);
+  const router = useRouter();
   return (
-    <div className="bg-neutral-100 shadow-xl fixed top-0 left-0 w-full h-12 flex justify-center items-center">
+    <div className="bg-neutral-100 shadow-xl fixed top-0 left-0 w-full h-12 flex justify-center items-center z-50">
       <div className="h-full w-full flex px-10 justify-between items-center">
         {/* logo */}
         <div className="text-slate-700 font-bold">HMS.</div>
@@ -18,7 +20,12 @@ export default function HomeHeader() {
             <a href="">Contact</a>
           </div>
           {/* Login button */}
-          <button className="bg-sky-600 text-white rounded py-1 px-5 shadow-xl text-shadow-2xs cursor-pointer hover:text-slate-200 hover:bg-sky-700">
+          <button className="bg-sky-600 text-white rounded py-1 px-5 shadow-xl text-shadow-2xs cursor-pointer hover:text-slate-200 hover:bg-sky-700"
+          onClick={()=> {
+              console.log("Clicked on login button")
+              router.push('/login')
+            }}
+          >
             Login
           </button>
         </div>
@@ -51,7 +58,12 @@ export default function HomeHeader() {
             <a href="#">Pricing</a>
             <a href="#">Contact</a>
 
-            <button className="bg-sky-600 text-white rounded py-1 px-5 shadow-xl cursor-pointer hover:text-slate-200 hover:bg-sky-700">
+            <button className="bg-sky-600 text-white rounded py-1 px-5 shadow-xl cursor-pointer hover:text-slate-200 hover:bg-sky-700" 
+            onClick={()=> {
+              console.log("Clicked on login button")
+              router.push('/login')
+            }}
+            >
               Login
             </button>
           </div>
