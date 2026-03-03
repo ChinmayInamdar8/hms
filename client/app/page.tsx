@@ -1,7 +1,9 @@
+import MenuHeader from "./components/MenuHeader";
+
 export default function Page(){
   return (
-    <div>
-      Hello there
+    <div className="w-screen">
+      <MenuHeader/>
     </div>
   )
 }
