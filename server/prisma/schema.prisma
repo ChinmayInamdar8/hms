@@ -26,10 +26,10 @@ datasource db {
 model User{
   id Int @id @default(autoincrement())
   full_name String
-  Age Int
-  email String
+  age Int
+  email String @unique
   password String
-  phone_no String 
+  phone_no String @unique
   role Role
   created_at DateTime @default(now())
 }

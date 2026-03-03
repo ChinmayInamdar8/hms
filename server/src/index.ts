@@ -1,7 +1,10 @@
 import express from "express"
+import authRouter from "./models/auth/auth.route.js";
+
+
 const app = express();
 
-import {prisma} from './lib/prisma.js'
+app.use(express.json());
 
 app.get('/health', async (req, res)=>{
 
@@ -11,6 +14,8 @@ app.get('/health', async (req, res)=>{
     })
 })
 
+
+app.use('/auth', authRouter);
 
 app.listen(3000, ()=>{
     console.log("the app is running on http://localhost:3000");
