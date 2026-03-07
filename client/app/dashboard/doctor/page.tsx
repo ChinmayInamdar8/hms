@@ -1,9 +1,12 @@
+import DashbaordLayout from "@/app/features/dashboard/components/DashboardLayout";
 
 
 export default function DoctorDashboard(){
     return (
-        <div>
+        <DashbaordLayout>
+            <div>
             Hello there this si DoctorDashboard
-        </div>
+            </div>
+        </DashbaordLayout>
     )
 }
