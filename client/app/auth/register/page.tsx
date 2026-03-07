@@ -1,13 +1,11 @@
 import { LeftComponent } from "@/app/features/auth/components/LeftComponent"
 import { RightComponent } from "@/app/features/auth/components/RightComponent"
 
-export default function Register(){
+export default function Login(){
     return (
-        <div className="h-screen w-screen grid grid-cols-2">
-            <div><RightComponent/></div>
-            <div>
-                <LeftComponent/>
-            </div>
+        <div className="min-h-screen grid grid-cols-1">
+            <RightComponent />
+
         </div>
     )
 }

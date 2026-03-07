@@ -6,7 +6,7 @@ export default function MenuHeader(){
             <div className="text-slate-700 font-medium ml-2">
                 HMS.
             </div>
-            <div className="flex justify-between items-center gap-4 mr-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mr-6">
                 <a href="/">About</a>
                 <a href="/">Pricing</a>
                 <a href="/">Features</a>

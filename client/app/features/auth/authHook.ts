@@ -1,5 +1,5 @@
-import { loginUser } from "./authApi";
-import { LoginType } from "./authTypes";
+import { loginUser, registerUser } from "./authApi";
+import { LoginType, RegisterType } from "./authTypes";
 
 export const useLogin = ()=>{
     const login = async (data:LoginType)=>{
@@ -10,10 +10,10 @@ export const useLogin = ()=>{
     return {login};
 }
 export const useRegister = ()=>{
-    const login = async (data:LoginType)=>{
-        const response = await loginUser(data);
+    const register = async (data:RegisterType)=>{
+        const response = await registerUser(data);
         return response;
     }
 
-    return login;
+    return {register};
 }
