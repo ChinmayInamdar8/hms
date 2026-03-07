@@ -15,8 +15,8 @@ export default withAuth(
                 // allow auth related routes
                 if(
                     pathname.startsWith('/api/auth')  ||
-                    pathname.startsWith('/login') ||
-                    pathname.startsWith('/register') ||
+                    pathname.startsWith('/auth/login') ||
+                    pathname.startsWith('/auth/register') ||
                     pathname ==='/'
                 ){
                     return true;

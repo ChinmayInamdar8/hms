@@ -11,7 +11,7 @@ export default function MenuHeader(){
                 <a href="/">Pricing</a>
                 <a href="/">Features</a>
                 <a href="/">Documentation</a>
-                <a href="/login" className="bg-sky-600 text-white rounded shadow-2xs w-24 h-10 bg-linear-to-r from-pink-500 via-red-500 to-orange-500 p-0.5">
+                <a href="auth/login" className="bg-sky-600 text-white rounded shadow-2xs w-24 h-10 bg-linear-to-r from-pink-500 via-red-500 to-orange-500 p-0.5">
                 <div className="bg-sky-600 w-full h-full flex justify-center rounded hover:bg-sky-700 transition duration-300 ease-in-out items-center">
                     Login
                 </div>

@@ -1,0 +1,92 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+
+const RegisterForm = () => {
+  const router = useRouter();
+
+  const SubmitLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const extractedData = new FormData(e.currentTarget);
+    const email = extractedData.get("email") as string;
+    const password = extractedData.get("password") as string;
+  };
+
+  return (
+    <div className="w-full flex flex-col justify-center mt-5 gap-4">
+      <form onSubmit={SubmitLogin} className="grid grid-cols-2">
+        <div className="flex flex-col justify-center gap-3">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            className="py-1.5 px-4 rounded-xl outline-none border-2 border-teal-700"
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-3">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            className="py-1.5 px-4 rounded-xl outline-none border-2 border-teal-700"
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-3">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            className="py-1.5 px-4 rounded-xl outline-none border-2 border-teal-700"
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-3">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            className="py-1.5 px-4 rounded-xl outline-none border-2 border-teal-700"
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-3">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            className="py-1.5 px-4 rounded-xl outline-none border-2 border-teal-700"
+          />
+        </div>
+        <div className="flex flex-col justify-center gap-3 mt-6">
+          <button
+            type="submit"
+            className="bg-teal-800 py-1.5 text-center rounded-xl shadow-xl text-white cursor-pointer hover:bg-teal-700 transition duration-300 ease-in-out "
+          >
+            Login
+          </button>
+        </div>
+        <div className="flex flex-col justify-center items-center gap-3">
+          <p>
+            Don't have Account ?{" "}
+            <span
+              className="text-teal-700 cursor-pointer"
+              onClick={() => router.push("/auth/register")}
+            >
+              Register
+            </span>{" "}
+          </p>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default RegisterForm;
