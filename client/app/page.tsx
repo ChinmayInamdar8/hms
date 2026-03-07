@@ -1,4 +1,4 @@
-import MenuHeader from "./components/MenuHeader";
+import MenuHeader from "./features/mainPage/components/MenuHeader";
 
 export default function Page(){
   return (
