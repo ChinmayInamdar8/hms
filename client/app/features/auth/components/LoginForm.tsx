@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import toast, { Toaster } from "react-hot-toast";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -21,6 +22,7 @@ const LoginForm = () => {
 
     if (response?.ok) {
       console.log("Successfully logged in");
+      toast.success('Logged in!')
       router.push('/dashboard/doctor')
     } else {
       console.log("There is some issue in Loging in");
@@ -29,6 +31,12 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col justify-center mt-5 gap-4">
+      <div>
+        <Toaster
+  position="top-right"
+  reverseOrder={false}
+      />
+      </div>
       <form onSubmit={SubmitLogin}>
         <div className="flex flex-col justify-center gap-3">
           <label htmlFor="email">Email</label>

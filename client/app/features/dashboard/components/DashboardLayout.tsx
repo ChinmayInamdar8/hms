@@ -17,7 +17,7 @@ export default function DashboardLayout({
       <div className="flex flex-1 overflow-hidden">
         
         {/* Sidebar */}
-        <div className="w-50 bg-slate-100 shadow-2xl text-white shrink-0 rounded-t-xl border border-teal-700">
+        <div className="w-50 shadow-2xl text-white shrink-0 border-2 border-slate-300">
           <DashboardSidebar />
         </div>
 
