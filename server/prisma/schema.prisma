@@ -4,16 +4,6 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-enum Role{
-  DOCTOR
-  ADMIN
-  SUPERADMIN
-  NURSE
-  PATIENT
-  LAB_OPERATOR
-  DESK_OPERATOR
-}
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -30,6 +20,30 @@ model User{
   email String @unique
   password String
   phone_no String @unique
-  role Role
+  role_id Int
   created_at DateTime @default(now())
+  role Role @relation(fields: [role_id], references: [id])
+}
+
+model Role{
+  id Int @id @default(autoincrement())
+  role_name String
+  user User[] 
+}
+
+model patient{
+  id Int @id @default(autoincrement())
+  full_name String
+  gender String
+  date_of_birth DateTime
+  blood_Group String @db.VarChar(1)
+  mobile_no String? @db.VarChar(10)
+  email_id String?
+  alternate_mobile_no String? @db.VarChar(10)
+  address String?
+  govt_id_type String?
+  id_number String?
+  insurance_id String?
+  
+
 }

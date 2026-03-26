@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen w-screen flex flex-col">
+    <div className="h-screen w-screen flex flex-col text-teal-800">
       
       {/* Header */}
       <DashboardHeader />
@@ -17,13 +17,15 @@ export default function DashboardLayout({
       <div className="flex flex-1 overflow-hidden">
         
         {/* Sidebar */}
-        <div className="w-50 shadow-2xl text-white shrink-0 border-2 border-slate-300">
+        <div className="w-50 shadow-2xl bg-slate-100 text-white shrink-0">
           <DashboardSidebar />
         </div>
 
         {/* Main scrollable content */}
-        <div className="flex-1 overflow-y-auto p-4">
-          {children}
+        <div className="flex-1 overflow-y-auto p-4 bg-stone-300">
+          <div className="bg-slate-100 w-full h-full rounded-xl shadow-xl border p-2 border-slate-500">
+            {children}
+          </div>
         </div>
       </div>
     </div>
