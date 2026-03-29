@@ -30,7 +30,9 @@ export const AuthLoginController = async (req:Request, res:Response)=>{
     
     // generate the token and response and send response as 200
     
-    const resPayload = generateResponsePayload(userFromDB);
+    const resPayload = await  generateResponsePayload(userFromDB);
+
+    console.log("THe response Paylod is", resPayload)
     
     return res.status(200).json(resPayload);  
 }

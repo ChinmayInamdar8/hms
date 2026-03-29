@@ -23,7 +23,7 @@ const LoginForm = () => {
     if (response?.ok) {
       console.log("Successfully logged in");
       toast.success('Logged in!')
-      router.push('/dashboard/doctor')
+      router.push('/doctor/dashboard')
     } else {
       console.log("There is some issue in Loging in");
     }

@@ -13,7 +13,7 @@ datasource db {
   provider = "postgresql"
 }
 
-model User{
+model user{
   id Int @id @default(autoincrement())
   full_name String
   age Int
@@ -22,28 +22,51 @@ model User{
   phone_no String @unique
   role_id Int
   created_at DateTime @default(now())
-  role Role @relation(fields: [role_id], references: [id])
+  role role @relation(fields: [role_id], references: [id])
 }
 
-model Role{
+model role{
   id Int @id @default(autoincrement())
   role_name String
-  user User[] 
+  user user[] 
 }
 
-model patient{
-  id Int @id @default(autoincrement())
-  full_name String
-  gender String
-  date_of_birth DateTime
-  blood_Group String @db.VarChar(1)
-  mobile_no String? @db.VarChar(10)
-  email_id String?
-  alternate_mobile_no String? @db.VarChar(10)
-  address String?
-  govt_id_type String?
-  id_number String?
-  insurance_id String?
-  
+model patient {
+  id                     Int       @id @default(autoincrement())
 
+  // Basic Info
+  first_name             String
+  last_name              String
+  gender                 String
+  date_of_birth          DateTime
+  marital_status         String?
+  blood_group            String?   @db.VarChar(3)
+
+  // Contact Details
+  mobile_no              String    @db.VarChar(10)
+  email_id               String?
+  address                String?
+  city                   String?
+  state                  String?
+  pincode                String?   @db.VarChar(6)
+
+  // Emergency Contact
+  emergency_contact_name     String?
+  emergency_contact_relation String?
+  emergency_contact_mobile   String? @db.VarChar(10)
+
+  // Medical Details
+  allergies              String?
+  existing_diseases      String?
+  current_medication     String?
+  height_cm              Float?
+  weight_kg              Float?
+
+  // Insurance Details
+  insurance_provider     String?
+  policy_number          String?
+  policy_expiry_date     DateTime?
+
+  created_at             DateTime  @default(now())
+  updated_at             DateTime  @updatedAt
 }

@@ -8,7 +8,7 @@ export interface RegisterType{
     full_name: string;
   age: number;
   phone_no: string;
-  role: string;
+  role: number;
   email: string;
   password: string;
 }

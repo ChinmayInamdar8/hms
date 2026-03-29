@@ -4,3 +4,17 @@
     --color-black-head : oklch(20.8% 0.042 265.755);
     --color-teal-content: oklch(43.7% 0.078 188.216);
 }
+
+
+
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

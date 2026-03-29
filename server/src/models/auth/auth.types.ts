@@ -1,5 +1,4 @@
 import { z } from "zod"
-import { Role } from "../../generated/prisma/client.js";
 import { RegisterSchema } from "./auth.validation.js";
 
 export interface CheckIfUserPresent{
@@ -19,8 +18,8 @@ export interface GenerateResponsePayload{
     email: string;
     password: string;
     phone_no: string;
-    role: Role;
     created_at: Date;
+    role_id:number
 }
 
 export type RegisterNewUser = {
@@ -28,6 +27,6 @@ export type RegisterNewUser = {
     age: number;
     email: string;
     phone_no: string;
-    role: Role;
+    role: number;
     password: string;
 }

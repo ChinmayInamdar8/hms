@@ -22,7 +22,7 @@ export const checkIfPasswordIsCorrect = async (data:CheckIfPasswordIsCorrect)=>{
   return verify;
 }
 
-export const generateResponsePayload = (user:GenerateResponsePayload)=>{
+export const generateResponsePayload = async (user:GenerateResponsePayload)=>{
   // first generate the token 
 
   const secretKey = process.env.SECRET_KEY;
@@ -31,10 +31,17 @@ export const generateResponsePayload = (user:GenerateResponsePayload)=>{
     throw new Error("Secret key is not present");
   }
 
+  const role = await prisma.role.findFirst({
+    where:{
+      id: user.role_id
+    }
+  })
+
   const token = Jwt.sign({
     id:user.id,
     email:user.email,
-    role:user.role,
+    role:user.role_id,
+    role_name: role?.role_name,
     name:user.full_name,
   }, secretKey, {expiresIn:"1h"});
 
@@ -44,8 +51,9 @@ export const generateResponsePayload = (user:GenerateResponsePayload)=>{
       id:user.id,
       name:user.full_name,
       email:user.email,
-      role:user.role,
-      mobile:user.phone_no
+      role:user.role_id,
+      mobile:user.phone_no,
+      role_name:role?.role_name
     },
     token
   }
@@ -59,7 +67,10 @@ export const registerNewUser = async (user: RegisterNewUser)=>{
     const userFromDB = await prisma.user.create({
     data:{
       ...user,
-      password:hashedPassword
+      password:hashedPassword,
+      role:{
+        connect:{id:user.role}
+      }
     }
   })
   return generateResponsePayload(userFromDB);

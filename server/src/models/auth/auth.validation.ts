@@ -1,5 +1,4 @@
 import {z} from "zod"
-import { Role } from '../../generated/prisma/client.js'
 
 export const loginSchema = z.object({
     email : z.string().email(),
@@ -11,6 +10,6 @@ export const RegisterSchema = z.object({
     age:z.coerce.number(),
     email : z.string().email(),
     phone_no : z.string().length(10),
-    role : z.enum(Role),
+    role :z.number(),
     password: z.string()
 })

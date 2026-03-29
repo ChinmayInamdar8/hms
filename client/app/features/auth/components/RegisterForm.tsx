@@ -20,7 +20,7 @@ const RegisterForm = () => {
     const mainData: RegisterType = {
       full_name: rawData.full_name as string,
       phone_no: rawData.phone_no as string,
-      role: rawData.role as string,
+      role: +rawData.role as number,
       email: rawData.email as string,
       password: rawData.password as string,
       age: Number(rawData.age),
@@ -44,31 +44,31 @@ const RegisterForm = () => {
 
   const roles = [
     {
-      value: "DOCTOR",
+      value: 1,
       label: "Doctor",
     },
     {
-      value: "ADMIN",
+      value: 2,
       label: "Admin",
     },
     {
-      value: "SUPERADMIN",
+      value: 3,
       label: "Super Admin",
     },
     {
-      value: "NURSE",
+      value: 4,
       label: "Nurse",
     },
     {
-      value: "PATIENT",
+      value: 5,
       label: "Patient",
     },
     {
-      value: "LAB_OPERATOR",
+      value: 6,
       label: "Lab Operator",
     },
     {
-      value: "DESK_OPERATOR",
+      value: 7,
       label: "Desk Operator",
     },
   ];
