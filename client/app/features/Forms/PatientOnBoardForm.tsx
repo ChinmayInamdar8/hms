@@ -5,6 +5,7 @@ import { FormSchema } from "@/app/custom-components/dynamic-form/types";
 import { FieldValues } from "react-hook-form";
 
 const Submithandler = async (data: FieldValues) => {
+  // post the data to the backend
   console.log(data);
 };
 

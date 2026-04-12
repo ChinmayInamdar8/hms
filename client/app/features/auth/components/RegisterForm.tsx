@@ -33,9 +33,11 @@ const RegisterForm = () => {
         await signIn('credentials', {
           email:mainData.email,
           password:mainData.password,
-          redirect:true,
+          redirect:false,
           callbackUrl:"/dashboard/doctor"
         })
+
+        router.push('/doctor/dashboard')
     }
     }catch(e){
       console.log("error is ", e);

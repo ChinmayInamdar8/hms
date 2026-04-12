@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/doctor/dashboard", "app/doctor/onBoardPatient"  ],
   "exclude": ["node_modules"]
 }

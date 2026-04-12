@@ -1,7 +1,7 @@
 const doctorMenu:MenuType[] = [
     {
         label:"On-board patient",
-        path:'/doctor/dashboard',
+        path:'/doctor/onBoardPatient',
         key:1
     },
 ]

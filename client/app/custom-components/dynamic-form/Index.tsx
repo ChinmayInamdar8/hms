@@ -31,7 +31,7 @@ export const CustomForm = ({
   });
 
   return (
-    <div className="w-full h-full px-20">
+    <div className="w-full h-full px-1  md:px-20">
       <h2 className="text-black-head text-2xl text-center">
         {schema.formName}
       </h2>
@@ -50,7 +50,7 @@ export const CustomForm = ({
         <div className="w-full mt-10 flex justify-center items-center">
           <button
             type="submit"
-            className="py-2 px-10 bg-teal-600 text-slate-200 rounded shadow-xl mb-10"
+            className="py-2 px-10 bg-teal-600 text-slate-200 rounded shadow-xl mb-10 cursor-pointer hover:bg-teal-700 transform transition-transform duration-300 ease-in-out hover:scale-105"
           >
             Submit
           </button>
@@ -83,7 +83,7 @@ const CreateFormFields = ({
         {" "}
         <FaCircle size={8} /> {name}
       </h3>
-      <div className={`w-full grid ${gridColsMap[columns]} gap-5 mt-10 `}>
+      <div className={`w-full grid grid-cols-1 md:${gridColsMap[columns]} gap-5 mt-10 `}>
         {mainSchema.map((value, index) => {
           if (value.type === "select" && value.selectOptions) {
             return (

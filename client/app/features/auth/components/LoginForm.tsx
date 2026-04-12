@@ -2,13 +2,18 @@
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import Loader from "@/app/custom-components/loader/Loader";
 
 const LoginForm = () => {
   const router = useRouter();
+  const [showLoader, setShowLoader] = useState<boolean>(false)
 
   const SubmitLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const extractedData = new FormData(e.currentTarget);
+    setShowLoader(true);
+    try{
+      const extractedData = new FormData(e.currentTarget);
     const email = extractedData.get("email") as string;
     const password = extractedData.get("password") as string;
 
@@ -27,6 +32,11 @@ const LoginForm = () => {
     } else {
       console.log("There is some issue in Loging in");
     }
+    }catch(e){
+      console.log("there is error, ", e);
+    }finally{
+      setShowLoader(false);
+    }
   };
 
   return (
@@ -36,6 +46,7 @@ const LoginForm = () => {
   position="top-right"
   reverseOrder={false}
       />
+      <Loader isActive={showLoader}/>
       </div>
       <form onSubmit={SubmitLogin}>
         <div className="flex flex-col justify-center gap-3">
